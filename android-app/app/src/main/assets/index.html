@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Monster Math Quest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz-styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="main-menu" class="screen">
+            <h1>Monster Math Quest</h1>
+            <div class="menu-buttons">
+                <button id="learn-btn" class="menu-btn">Belajar Perkalian</button>
+                <button id="quiz-btn" class="menu-btn">Quiz Monster</button>
+            </div>
+        </div>
+
+        <div id="learn-screen" class="screen hidden">
+            <div style="display: flex; flex: 1; gap: 15px; height: 100%;">
+                <div id="learn-sidebar">
+                    <div class="sidebar-title">Menu Belajar</div>
+                    <div class="multiplication-selector">
+                        <label>Pilih Perkalian:</label>
+                        <select id="multiplication-table">
+                            <option value="1" selected>Perkalian 1</option>
+                            <option value="2">Perkalian 2</option>
+                            <option value="3">Perkalian 3</option>
+                            <option value="4">Perkalian 4</option>
+                            <option value="5">Perkalian 5</option>
+                            <option value="6">Perkalian 6</option>
+                            <option value="7">Perkalian 7</option>
+                            <option value="8">Perkalian 8</option>
+                            <option value="9">Perkalian 9</option>
+                            <option value="10">Perkalian 10</option>
+                        </select>
+                    </div>
+                    <button id="start-learn-btn">Mulai Belajar</button>
+                    <div id="learn-tabs" class="hidden">
+                        <button id="tab-concept" class="tab-btn active">Apa Itu Perkalian?</button>
+                        <button id="tab-visual" class="tab-btn">Lihat Gambar</button>
+                        <button id="tab-practice" class="tab-btn">Coba Sendiri</button>
+                    </div>
+                    <button id="back-to-menu-learn" class="top-back-btn">← Kembali ke Menu</button>
+                </div>
+                
+                <div id="learn-main">
+                    <div id="learn-content">
+                        <!-- Learning content will be shown here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen hidden">
+            <div id="quiz-header">
+                <div id="score">Skor: <span id="score-value">0</span></div>
+                <div id="health">Nyawa: <span id="health-value">100</span>%</div>
+                <div id="level">Level: <span id="level-value">1</span></div>
+            </div>
+            
+            <div id="game-area">
+                <div id="castle">
+                    <div id="castle-image">🏰</div>
+                    <div id="laser"></div>
+                </div>
+                
+                <div id="monster-container">
+                    <!-- Monsters will be generated here -->
+                </div>
+            </div>
+            
+            <div id="question-display">
+                <div id="question">?</div>
+                <div id="answer-display">Jawaban: <span id="answer-value"></span></div>
+            </div>
+            
+            <div id="numpad">
+                <div class="numpad-row">
+                    <button class="numpad-btn" data-value="7">7</button>
+                    <button class="numpad-btn" data-value="8">8</button>
+                    <button class="numpad-btn" data-value="9">9</button>
+                </div>
+                <div class="numpad-row">
+                    <button class="numpad-btn" data-value="4">4</button>
+                    <button class="numpad-btn" data-value="5">5</button>
+                    <button class="numpad-btn" data-value="6">6</button>
+                </div>
+                <div class="numpad-row">
+                    <button class="numpad-btn" data-value="1">1</button>
+                    <button class="numpad-btn" data-value="2">2</button>
+                    <button class="numpad-btn" data-value="3">3</button>
+                </div>
+                <div class="numpad-row">
+                    <button class="numpad-btn" data-value="0">0</button>
+                    <button class="numpad-btn control-btn clear" id="clear-btn">⌫</button>
+                    <button class="numpad-btn control-btn enter" id="enter-btn">⏎</button>
+                </div>
+            </div>
+            
+            <button id="back-to-menu-quiz" class="menu-btn">Kembali ke Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="quiz-mode.js"></script>
+</body>
+</html>
